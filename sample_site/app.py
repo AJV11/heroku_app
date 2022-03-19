@@ -20,7 +20,7 @@ def index():
 
     # Render HTML with milestone variable 
     if count == 50:
-        return render_template("index.html", milestone=50)
+        return render_template("index.html", milestone=count, count=count)
 
     # Render HTML with count variable
     return render_template("index.html", count=count)
