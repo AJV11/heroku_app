@@ -18,6 +18,10 @@ def index():
     f.write(str(count))
     f.close()
 
+    # Render HTML with milestone variable 
+    if count == 50:
+        return render_template("index.html", milestone=50)
+
     # Render HTML with count variable
     return render_template("index.html", count=count)
 
