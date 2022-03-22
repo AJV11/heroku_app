@@ -16,14 +16,35 @@
 
     h1 {
         color: orange;
+        background-color: darkblue;
         font-size: 40pt;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
-    p {
+    h2 {
         color: darkcyan;
         font-size: 25pt;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    p {
+        color: purple;
+        font-size: 35pt;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    input {
+        color: white;
+        border-radius: 5pt;
+        border-color: red;
+        background-color: red;
+        font-size: 40pt;
+    }
+
+    img {
+        transform: rotate(120deg) scaleX(-1);
+        width: 120px;
+        height: 75px;
     }
 
 </style>
@@ -31,7 +52,17 @@
 
 <!--HTML Content!-->
 <div>
-    <h1>Welcome to my Lab 3 Environment!</h1><br>
-    <p>This site has been visited {{ count }} times!</p><br>
-    <p>YAY, we hit {{ milestone }} visits!</p>
+    <h1>TRIGGER HAPPY</h1><br>
+    <h2>This button has been clicked {{ count }} times!</h2><br>
+    <input type="button" value="CLICK ME!" onclick="window.location.href= 'http://127.0.0.1:5000/'">
+    <img src="https://entreresource.com/wp-content/uploads/2021/05/3.png" alt="Arrow">
+    {% if massivemilestone %}
+        <p>YAY, we hit a MASSIVE milestone: {{ massivemilestone }} clicks!</p>
+    {% elif  hugemilestone %}
+        <p>YAY, we hit a HUGE milestone: {{ hugemilestone }} clicks!</p>
+    {% elif bigmilestone %}
+        <p>YAY, we hit a big milestone: {{ bigmilestone }} clicks!</p>
+    {% elif milestone %}
+        <p>YAY, we hit a milestone: {{ milestone }} clicks!</p>
+    {% endif %}
 </div>
